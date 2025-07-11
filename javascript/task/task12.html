@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- spread operator  -->
+     <!-- The spread operator allows you to "spread out" or expand elements from an array, string, or object into individual parts. -->
+
+      <!-- It was introduced in ES6 (ECMAScript 2015) -->
+      <!-- IN aray we use spraed operator for 
+       copy an array
+       merge array
+       also use in functions -->
+    <script>
+            let arr = ["apple", "banana", "mango"]
+            let copy = [...arr]
+            console.log(copy)     
+
+
+            //joing array
+            let student = ["alisha" , "eman" ]
+            let preStudent = ["husnain" , "muqadas"]
+            let stu = [...student ,  ...preStudent]
+            console.log(stu)
+
+
+            //spread operator with function
+            let num = [ 3 , 4 ,5]
+            function add(a , b , c ){
+                return a + b + c
+            }
+            console.log(...num)
+
+            // spread operator with string 
+            let st = "alisha";         // ['a', 'l', 'i', 's', 'h', 'a']
+            let no = [...st];
+            console.log(no)         
+
+            let name1 = "alisha";
+            let name2 = "eman";
+            let final = [...name1 , ...name2]      //(10) ['a', 'l', 'i', 's', 'h', 'a', 'e', 'm', 'a', 'n']
+             final = [...name1 ," ", ...name2].join("")     //(10) ['a', 'l', 'i', 's', 'h', 'a', 'e', 'm', 'a', 'n']
+
+            console.log(final)
+            console.log(final)
+
+
+            // spread operator with objects
+            let student1 = {
+                name: "alisha",
+                age : 20
+            }
+            let clone = {...student1}
+            console.log(clone)      // it create shallow copy of the object
+
+            // Merge objects
+            const cl1 = {
+                name:"eman" ,
+                age :15  
+            }
+
+            const cl2 = {
+                name : "Husnain",
+                age : 12
+            }
+
+            const cl3 = {...cl1 , ...cl2};
+            console.log(cl3)
+            // here i learn an important thing if the name of keys are smae so 
+            //instaed of giving both of objects the latest one overwrite that and only
+            // give the last one 
+
+
+            // if you want boht object then use that 
+            const allstudnet = [cl1 , cl2]
+            console.log(allstudnet)
+
+
+            // overwriting with objects
+            let obj1 = {
+                theme:"light"
+            }
+            const newObj = {
+                ...obj1 , theme:"Dark"
+            }
+            console.log(newObj)
+    </script>
+</body>
+</html>
