@@ -1,132 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Student Grade Manager - Dark Theme</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Grade Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #1e1e2f;
-      color: #f0f0f0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
       padding: 30px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
     }
 
     h2, h3 {
       text-align: center;
-      color: #ffffff;
+      margin-bottom: 20px;
+      color: #00ffff;
     }
 
     .input-container {
-      text-align: center;
-      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
     }
 
     input, button {
-      padding: 10px;
-      margin: 5px;
-      border: 1px solid #555;
-      border-radius: 6px;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 10px;
       font-size: 16px;
-      background-color: #2b2b3c;
-      color: #f0f0f0;
+      outline: none;
+    }
+
+    input {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid #00ffff;
     }
 
     input::placeholder {
-      color: #aaa;
+      color: #ccc;
     }
 
     button {
-      background-color: #4CAF50;
-      color: white;
+      background: #00ffff;
+      color: #111;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s;
     }
 
     button:hover {
-      background-color: #45a049;
+      background: #00e6e6;
     }
 
     table {
-      width: 80%;
-      margin: auto;
+      width: 100%;
+      margin-top: 10px;
       border-collapse: collapse;
-      background-color: #2a2a3d;
-      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
       color: white;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      overflow: hidden;
     }
 
     th, td {
       padding: 12px;
-      text-align: center;
       border-bottom: 1px solid #444;
+      text-align: center;
     }
 
     th {
-      background-color: #33334d;
-    }
-
-    .delete-btn {
-      background-color: #e74c3c;
-      border: none;
-      padding: 6px 10px;
-      color: white;
-      border-radius: 4px;
-    }
-
-    .delete-btn:hover {
-      background-color: #c0392b;
+      background-color: #00ffff33;
+      color: #00ffff;
     }
 
     .low-score {
-      background-color: #5c1c1c;
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+
+    .delete-btn {
+      background: #ff4d4d;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .delete-btn:hover {
+      background: #e60000;
     }
 
     #avg {
       text-align: center;
       margin-top: 20px;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
+      color: #00ffcc;
     }
   </style>
 </head>
 <body>
 
-  <h2>Student Grade Manager</h2>
+  <div class="container">
+    <h2>📘 Student Grade Manager</h2>
 
-  <div class="input-container">
-    <input type="text" id="nameInput" placeholder="Enter student name">
-    <input type="number" id="marksInput" placeholder="Enter marks">
-    <button onclick="addStudent()">Add Student</button>
+    <div class="input-container">
+      <input type="text" id="nameInput" placeholder="Enter student name">
+      <input type="number" id="marksInput" placeholder="Enter marks">
+      <button onclick="addStudent()">Add</button>
+    </div>
+
+    <h3>📋 Student List</h3>
+    <table id="studentTable">
+      <tr>
+        <th>Name</th>
+        <th>Marks</th>
+        <th>Action</th>
+      </tr>
+    </table>
+
+    <div id="avg">Average: 0</div>
   </div>
-
-  <h3>Student List</h3>
-  <table id="studentTable">
-    <tr>
-      <th>Name</th>
-      <th>Marks</th>
-      <th>Action</th>
-    </tr>
-  </table>
-
-  <div id="avg">Average: 0</div>
 
   <script>
     let students = [];
 
     function addStudent() {
-      const nameField = document.getElementById("nameInput");
-      const marksField = document.getElementById("marksInput");
-      const name = nameField.value.trim();
-      const marks = parseInt(marksField.value);
+      const name = document.getElementById("nameInput").value.trim();
+      const marks = parseInt(document.getElementById("marksInput").value);
 
       if (name === "" || isNaN(marks)) {
-        alert("Please enter valid name and marks.");
+        alert("Please enter a valid name and number for marks.");
         return;
       }
 
       students.push({ name, marks });
 
-      nameField.value = "";   // Clear name field
-      marksField.value = "";  // Clear marks field
+      document.getElementById("nameInput").value = "";
+      document.getElementById("marksInput").value = "";
 
       updateTable();
       updateAverage();
@@ -144,6 +180,7 @@
 
       students.forEach((student, index) => {
         const row = table.insertRow();
+
         if (student.marks < 40) {
           row.classList.add("low-score");
         }
