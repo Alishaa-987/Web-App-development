@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <!-- call back
+     means giving functions as parameter in another function -->
+    <script>
+        // function message(first){
+        //     first()
+        // }
+
+
+        //  function first_message(){
+        //     console.log("hello")
+        // }
+
+        // message(first_message)
+
+
+
+        function sum( a , b) {
+            console.log(b)
+            a()
+        }
+
+
+        function calculate (){
+            console.log("hello")
+        }
+
+        sum( calculate , 20)
+    </script>
+</body>
+</html>

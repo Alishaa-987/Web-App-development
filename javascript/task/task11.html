@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fish Weight Check</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 30px;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+    input {
+      padding: 10px;
+      margin: 5px;
+    }
+    button {
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Fish Weight Checker 🎣</h2>
+
+  <input type="number" id="weight" placeholder="Enter fish weight">
+  <input type="number" id="minWeight" placeholder="Enter minimum weight">
+  <button onclick="check()">Check</button>
+
+  <div id="result"></div>
+
+  <script>
+    function checkFishWeight(weight, minWeight, callback) {
+      setTimeout(function () {
+        if (weight >= minWeight) {
+          callback("Pass");
+        } else {
+          callback("Fail");
+        }
+      }, 2000);
+    }
+
+    function check() {
+      const weight = parseFloat(document.getElementById("weight").value);
+      const minWeight = parseFloat(document.getElementById("minWeight").value);
+      const resultDiv = document.getElementById("result");
+      
+      resultDiv.innerText = "Checking...";
+      
+      checkFishWeight(weight, minWeight, function(result) {
+        resultDiv.innerText = "Result: " + result;
+      });
+    }
+  </script>
+
+</body>
+</html>

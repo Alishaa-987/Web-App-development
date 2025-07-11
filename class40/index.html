@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module" src="first.js"></script>
+    <script type="module" src="second.js"></script>
+    <script>
+        const user = {
+            name :"alisha" ,
+            email: "alisha@gmail.com",
+        }
+        // console.log(user.email);
+        // console.log(user.namel);
+
+        //  we can get output and in the same way we can get that while destructirng 
+
+        let { name , email} = user                     // destructing 
+        console.log(name);
+        console.log(email)
+
+
+        // spread operator  ...  (thats we put three dot it means jitna data bach gya he wo sara data de doo )
+        
+
+        let {  ...data } = user
+        console.log(data)
+
+
+
+
+
+
+        // destructuring array 
+        const products = ["product 1 "  , "product 2"]
+        let  [first , ...second ] = products 
+        console.log(first)
+        console.log(second)            // it give all the values on ouptut 
+
+
+        const name1 = 'javascript'
+        let [firstchar ,  ...data1 ] = name1
+        console.log(firstchar)
+        console.log(data1)
+
+
+
+        // module 
+        // import export
+
+        // hmm js ke file ko type = module kar dete he matlab hmm is file me kuch le bhe sakte he or kuch de bhe sakte hee
+        // matlab now we can use tow kekywords improt or export 
+        // koi aisa function jo dosre module ko dena hee
+
+
+        // matlab hmm n aik functio banaya he or hmm us ko dosre file me access karna chah sakte hee ab hmm
+        // is file me us ko export kare gee or dosre file me ja kar imprt karee gee
+
+
+        
+        
+    </script>
+
+
+<!--  promise  , call backs , 
+  try    ,     catch 
+  async ,  and await  -->
+</body>
+</html>

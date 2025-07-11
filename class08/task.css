@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(64, 117, 186);
+    margin-top: 80px;
+    padding-top: 40px;
+}
+h1{
+    color: black;
+    text-align: center;
+}
+.links{
+    color: blue;
+}
+div{
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    background-color: aliceblue;
+    text-align: center;
+    margin: 30px;
+    width: 30%;
+
+}
+img{
+    height: 200px;
+    width: 100%;
+}
+.color{
+    color: rgb(107, 198, 16);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+button{
+    background-color: rgb(63, 63, 127);
+    color: aliceblue;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+
+}
+.container{
+    display: inline-block;
+    margin: 0%auto;
+    margin: 10px;
+    
+}
+#con{
+    height: 263px;
+}
+#can{
+    height:245px ;
+}
+#Dev{
+    height: 245px;
+}

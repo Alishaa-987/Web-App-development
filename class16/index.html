@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./SMIT logo.jpg">
+    <title>class no 15</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            font-size: 10px;
+        }
+        /* .container{
+            width: 50%;
+            height: 50vh;
+            background-color: blue;
+            padding: 20px;
+        }
+        h1{
+            padding: 1rem;
+
+        }
+        .section{
+            padding: 0.5rem;
+        } */
+
+
+        .container{
+           
+            display: grid;
+            grid-template-columns: auto , auto , auto;
+            row-gap: 20px;
+            column-gap: 20px;
+            
+
+        }
+
+
+        .box-1,  .box-2,  .box-3{
+            width: 50%;
+            height: 40vh;
+        }
+        .box-1{
+            background-color: aquamarine;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .box-2{
+            background-color: rgb(5, 76, 52);
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        .box-3{
+            background-color: rgb(183, 208, 19);
+            grid-column-start: 3;
+            grid-column-end: 6;
+        }
+    </style>
+
+    <!-- 1rem=16px     it depends on font size  if we say font size is 10px then 1rem is equal to 10px
+     when we make the screeen small it adjust accordingly-->
+
+
+     <!-- em = 1 rem -->
+
+     <!-- suppose we define in the start font size is 10px and in body if we want a text size greater we say that 3rem -->
+</head>
+<body>
+    <!-- media query and key frame
+     key frame: 
+     media query: for responsiveness like for different screen we give diffetent widht and height
+     jin ko classes or ids de hoe he un ko he media query dene he k tablet screen or mobile scrren pe kia changing krane hee -->
+<!-- 
+     <div class="container">
+       <h2>hello container</h2>
+
+     </div>
+
+     <div class="container">
+        <h1>hello</h1>
+        <div class="section">
+            <h2>heading 2 </h2>
+        </div>
+     </div> -->
+
+      <div class="container">
+
+
+        <div class="box-1">
+
+        </div>
+        <div class="box-2">
+
+        </div>
+        <div class="box-3">
+
+        </div>
+
+      </div>
+</body>
+</html>
+
+<!-- media query
+ rem and em units depend on font size and when we use it or rem equal to 16px -->
+
+
+
+ <!-- rem calcuation
+  
+ 
+ px to to converter-->
+
+ <!-- flex  ya to column pe kam karta he ya row pe kam karta he  jab cheze complex ho gaye to grid use karte hee
+  flex direction
+  justify content
+  flex wrap -->
+
+
+  <!-- object fit :contain 
+   its for the whoel giving image ot the container -->

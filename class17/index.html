@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @media (min-width: 500px) and (max-width: 700px) {
+        body {
+          background-color: blueviolet;
+        }
+      }
+
+      h1 {
+        font-size: clamp(2rem, 19vw, 3rem);
+      }
+      header {
+        width: 100%;
+        height: calc(100vh-500px);
+        /* if i define height of one thing so we adjust other thing by usign the cal function like 100vh - that particulare height we have to calucate that when things are getting complex */
+        background-color: aquamarine;
+        padding-inline: 30px , 20px;
+      }
+      /* footer {
+        width: 100%;
+        height: 500px;
+        background-color: brown;
+      } */
+
+      .contaienre{
+        display: gird;
+        grid-template-columns: 2fr ,2fr  ,1fr  ,1fr ;
+        gap: 20px;
+      }
+
+      
+    
+    /* when we make funciton we have to give paremeters and in specific order */
+
+      div{
+        background-color: black;
+        color: red;
+        border: 10x solid rgb(215, 67, 67);
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- for font size responsiveness we use clamp function -->
+    <!-- <h1>hello word</h1>
+
+    <header>
+        <h1>hello words</h1>
+    </header>
+
+    <footer>
+        <h1>hii sisters</h1>
+    </footer> -->
+
+
+    <div  class="contaienre">
+       <div>
+        <h1>hello</h1>
+       </div>
+       <div>
+        <h3>hiii</h3>
+       </div>
+       <div>
+        <p>suuuuuuuuuu</p>
+       </div>
+    </div>
+
+  </body>
+</html>
+
+
+<!-- object fit is used when we use the some part of the image so we use that object fit  -->
+
+<!-- padding inline is used for giving padding to the left and right and padding block to the top and botton padding same in the case of margin -->
+
+
+
+<!-- what is framework mena anything alreadys made ad we havea to just copy that we just copy code and it hsas limitation like we have to use custom css  -->
+
+<!-- library has while custoization we can add and edit as your own  whilt css mainly use the framework and at a time we use one framework not one for one website we use one website  -->

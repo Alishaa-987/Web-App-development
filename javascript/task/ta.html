@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Student Grade Manager</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    input, button {
+      margin: 5px;
+      padding: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .low {
+      background-color: #f8d7da;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Grade Manager</h2>
+
+  <input type="text" id="name" placeholder="Student Name">
+  <input type="number" id="marks" placeholder="Marks">
+  <button onclick="addStudent()">Add</button>
+
+  <table id="studentTable">
+    <tr>
+      <th>Name</th>
+      <th>Marks</th>
+    </tr>
+  </table>
+
+  <p id="average">Average: 0</p>
+
+  <script>
+   const students = [];
+
+function addStudent() {
+  // 1. Get values from input
+  const name = document.getElementById("name").value;
+  const marks = document.getElementById("marks").value;
+
+  // 2. Basic check
+  if (name === "" || marks === "") {
+    alert("Enter both name and marks");
+    return;
+  }
+
+  // 3. Convert marks to number
+  const m = parseInt(marks);
+  students.push(m);
+
+  // 4. Create new row in table
+  const table = document.getElementById("studentTable");
+  const row = table.insertRow();
+  if (m < 40) row.style.background = "lightcoral";
+
+  row.insertCell(0).innerText = name;
+  row.insertCell(1).innerText = m;
+
+  // 5. Clear input fields
+  document.getElementById("name").value = "";
+  document.getElementById("marks").value = "";
+
+  // 6. Update average
+  let total = 0;
+  for (let i = 0; i < students.length; i++) {
+    total += students[i];
+  }
+  const avg = total / students.length;
+  document.getElementById("average").innerText = "Average: " + avg.toFixed(2);
+}
+
+  </script>
+
+</body>
+</html>

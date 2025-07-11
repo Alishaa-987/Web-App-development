@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Centered Form</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+      font-family: Arial;
+    }
+
+    form {
+      border: 1px solid black;
+      padding-inline: 50px;
+      padding-block: 70px;
+      background-color: white;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <label for="username">Enter Name:</label>
+    <input type="text" id="username">
+
+    <label for="userpassword">Enter Password:</label>
+    <input type="password" id="userpassword">
+
+    <label for="useremail">Enter Email:</label>
+    <input type="email" id="useremail">
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      let name = document.getElementById("username").value;
+      let password = document.getElementById("userpassword").value;
+      let email = document.getElementById("useremail").value;
+
+      if (name === "") {
+        alert("Name is required!");
+      } else if (email === "") {
+        alert("Email is required!");
+      } else if (password === "") {
+        alert("Password is required!");
+      } else {
+        alert("Form submitted successfully!");
+      }
+    }
+  </script>
+
+</body>
+</html>

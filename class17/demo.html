@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* General Styles */
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        section {
+            padding: 50px 10%;
+        }
+        h2, h4, h6 {
+            text-align: center;
+        }
+        
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        .social-icons i {
+            margin-left: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero img {
+            max-width: 50%;
+        }
+        .hero button {
+            background-color: orange;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Case Studies */
+        .case-study-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .case-study {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .case-study img {
+            max-width: 40%;
+        }
+        .case-study:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .case-study button {
+            background-color: orange;
+            color: white;
+            padding: 10px;
+            border: none;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: black;
+            color: white;
+            padding: 50px 10%;
+        }
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .testimonial {
+            background: white;
+            color: black;
+            padding: 20px;
+            width: 45%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <div class="social-icons">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <i class="fa-brands fa-behance"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div>
+            <h1>Alisha Fatima</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button>Let's Get Started ></button>
+        </div>
+        <img src="./images/girl_image.jpg" alt="Alisha Fatima">
+    </section>
+
+    <!-- Case Studies -->
+    <section id="case-studies">
+        <h2>Case Studies</h2>
+        <div class="case-study-container">
+            <div class="case-study">
+                <div>
+                    <h6>Fintech</h6>
+                    <h2>Work Name Here</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <button>View Case Study ></button>
+                </div>
+                <img src="./images/1stimage.png" alt="Fintech">
+            </div>
+            <div class="case-study">
+                <img src="./images/2ndimage.png" alt="Edtech">
+                <div>
+                    <h6>Edtech</h6>
+                    <h2>Work Name Here</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <button>View Case Study ></button>
+                </div>
+            </div>
+            <div class="case-study">
+                <div>
+                    <h6>Pharma</h6>
+                    <h2>Work Name Here</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <button>View Case Study ></button>
+                </div>
+                <img src="./images/image.png" alt="Pharma">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <h3>Client Name</h3>
+            </div>
+            <div class="testimonial">
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <h3>Client Name</h3>
+            </div>
+            <div class="testimonial">
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <h3>Client Name</h3>
+            </div>
+            <div class="testimonial">
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <h3>Client Name</h3>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

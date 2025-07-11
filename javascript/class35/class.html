@@ -1,0 +1,78 @@
+<!-- action matlab jab form submit karvana he to kaha redirecct karvana hee -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+   <form >
+             <input type="text" value="alisah" id="name">
+             <button onclick="check()">Submit</button>
+
+   </form> 
+   <!--   method of submitting form  :  get  ,  post,   delete,   patch , put -->
+      <!-- API caliling   in which we get data in json foam -->
+       <!-- kon se api kon se method se lena hee matlba data create karna wo post metod se or agr data lena he to we get metod se
+        agr data delete karna he to wo delete metod se  
+        
+        
+        read or get is same 
+        create or post is same 
+        update or patch is same-->
+
+        <!-- we name it as a crud
+         create  read  update  delete -->
+   <div id="error"></div>
+ </body>
+  <script>
+    function check(){
+ const data = document.getElementById('name').value;
+ const error= document.getElementById('error')
+    console.log(data)
+    if(data === 'alisha'){
+        alert("foam is fileled")
+    }else{
+        console.log("no data fill")
+    }
+    }
+
+
+
+
+    // if (data === ''){
+    //     alert('fill this input')
+    // } else{
+    //     alert('successfully submit')
+    // }
+
+
+    //    if (data === ''){
+       
+    // } else{
+    //     alert('successfully submit')
+    // }
+   
+
+
+
+
+    // object literals
+    // constructor ke throug hmm properteis assign karte he jaise function me parameter detae he jab use call kate he constructor me value different pass kia karte he jaise different paremaete funcion me dete hee ab ap n wo kam karna he object ka sath or propeties aik dafa define karne hee so hmm different object bana sakte he 
+  
+     function Person ( name ,  email){
+        this.firstname = name
+        this.email = email
+     }
+      const Person_one =  new Person('aliaa'  ,  'ali@gmail.com')
+     console.log(Person_one )
+
+    //  use script is used when we declare varaible in it show warning so that it show that we have to initilaize that variable 
+    // use in fornt of use strict in the script in single quote
+
+
+    // sahi se kuch define nahi hoa ya js ke syntax ko follow nahi kia to ap ko error de gaa
+
+  </script>
+ </html>
